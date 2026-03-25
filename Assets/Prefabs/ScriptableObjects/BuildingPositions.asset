@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d3a09f9878682459f65a871d995750, type: 3}
+  m_Name: BuildingPositions
+  m_EditorClassIdentifier: 
+  hospitalBought: 1
+  mineBought: 1
+  forgeBought: 1
+  armoryBought: 1
+  wallsBought: 0
+  jeffPlayed: 1
+  hospitalPosition: {x: -21.205591, y: 0, z: -4.5643544}
+  hospitalRotation: {x: -0, y: -0.68204033, z: -0, w: 0.7313146}
+  forgePosition: {x: -5.4386816, y: 0, z: -15.25522}
+  forgeRotation: {x: -0, y: -0.68204033, z: -0, w: 0.7313146}
+  armoryPosition: {x: 1.1765041, y: 0, z: 2.71375}
+  armoryRotation: {x: -0, y: -0.68204033, z: -0, w: 0.7313146}
+  hospitalPrice:
+    stone: 110
+    wood: 130
+    iron: 0
+  minePrice:
+    stone: 120
+    wood: 180
+    iron: 0
+  forgePrice:
+    stone: 160
+    wood: 110
+    iron: 40
+  armoryPrice:
+    stone: 210
+    wood: 230
+    iron: 30
+  wallsPrice:
+    stone: 280
+    wood: 340
+    iron: 70

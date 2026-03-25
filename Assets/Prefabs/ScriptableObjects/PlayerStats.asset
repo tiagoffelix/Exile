@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fefa07e16b6aa64f98c367e44f3aed4, type: 3}
+  m_Name: PlayerStats
+  m_EditorClassIdentifier: 
+  health: 100
+  armor: 0
+  swordDamage: 20
+  wood: 0
+  rock: 0
+  metal: 0
+  enemies: 3
+  enemiesAlive: 3
+  night: 1
+  bossFight: 0
+  bossDead: 0
+  hasMined: 0
+  damageTaken: 0
+  easyDifficulty: 1
+  mediumDifficulty: 0
+  hardDifficulty: 0
+  dead: 0
+  volume: 0.5
+  sensitivity: 500
+  gameEnding: 0
+  healthRetry: 0
+  armorRetry: 0

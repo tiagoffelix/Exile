@@ -1,0 +1,47 @@
+# Unity generated folders
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# Unity generated assets
+/[Aa]ssets/Unity.VisualScripting.Generated.meta
+/[Aa]ssets/Unity.VisualScripting.Generated/
+
+# IDE and editor settings
+/.vs/
+/.idea/
+/.vscode/
+/.gradle/
+/ExportedObj/
+/.consulo/
+
+# Unity-generated project files
+/*.csproj
+/*.unityproj
+/*.sln
+/*.suo
+/*.tmp
+/*.user
+/*.userprefs
+/*.pidb
+/*.booproj
+/*.svd
+/*.pdb
+/*.mdb
+/*.opendb
+/*.VC.db
+/*.rsuser
+/*.sln.docstates
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Crash reports
+sysinfo.txt
