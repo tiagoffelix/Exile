@@ -1,64 +1,52 @@
 # Exile
 
-A Unity project focused on **modular gameplay systems**, combining combat, resource gathering, base progression, and persistent world state.
+Exile is a solo Unity project combining 3D daytime resource gathering and settlement progression with 2D nighttime combat.
 
-Exile was built as a systems-driven prototype rather than a one-off gameplay scene. The project explores how combat, interaction, economy, and progression can work together inside a reusable gameplay framework.
+## Solo Project
 
-## What I Built
+Role: Solo Programmer and Designer
 
-- **Player movement and melee combat**
-  - Implemented third-person character movement, attack timing, hit detection, and animation-driven combat flow.
-  - Added support systems such as audio feedback, attack cooldowns, and contextual resource hit reactions.
+I implemented the gameplay loop, progression, persistence, combat, shops, upgrades, difficulty modes, and scene flow in Unity and C#.
 
-- **Interaction framework**
-  - Built an `IInteractable`-based interaction system using raycasts, allowing gameplay objects to expose interactions through a shared contract.
-  - Used this to support gameplay features like mining, shops, and world interactions in a reusable way.
+## Gameplay Loop
 
-- **Resource and harvesting systems**
-  - Created destructible resource nodes with health, drop logic, UI health feedback, and world-state updates.
-  - Connected gathering directly to player progression by feeding materials into building and upgrade systems.
+Day: gather wood, rock, and metal, then spend resources on buildings and upgrades.
 
-- **Economy and base progression**
-  - Implemented building purchase flow with affordability checks, UI state updates, and unlock progression.
-  - Added building data structures for purchase states, prices, and spawned placement data.
+Night: use that preparation in a 2D combat phase. Surviving advances the persistent run and returns the player to the next preparation phase.
 
-- **Persistent game state**
-  - Built centralized save/load handling through a `GameManager`, persisting player stats, progression flags, world state, time-of-day state, and building transforms.
-  - Used `ScriptableObject`s to separate configurable shared state from scene logic.
+## Economy and Progression
 
-- **World state and scene flow**
-  - Added ambient spawning, material spawning, time-of-day tracking, and end-of-day scene transitions.
-  - Structured systems so progression state carries across sessions and scene changes.
+Prices needed to remain achievable across difficulty modes. Each mode also needed a reasonable number of days and nights, so daytime gathering could support preparation without removing pressure from the combat phase. Player statistics, resources, difficulty, and building state persist across scenes and sessions.
 
-## Technical Highlights
+## Difficulty and Pacing
 
-### Gameplay Systems
-- Character movement and combat flow
-- Resource harvesting and drop handling
-- Building unlock and upgrade progression
-- Interactable world objects
+Difficulty modes alter the intended run pressure. The daytime economy and upgrade prices were designed so increasing difficulty would not make progression impossible.
 
-### Architecture
-- Centralized `GameManager` for persistence and reset flow
-- Interface-driven interaction via `IInteractable`
-- Shared state through `ScriptableObject`s
-- Separation between player systems, world systems, and progression systems
+## Design Limitation
 
-### Tools / Data Flow
-- Building prices stored as reusable data structures
-- Persistent building positions and rotations
-- Spawn systems driven by tracked world counts
-- Modular scene-to-scene state handoff
+The primary scaling rule adds one enemy each night. This is a simple difficulty model. The rising count still increases pressure and encourages more efficient resource gathering during the day, but a richer curve could vary enemy composition and pressure more deliberately.
 
-## Repository Structure
+## Main Systems
 
-```text
-Assets/
-  Scripts/
-    3D/           Core gameplay systems
-    2D & Menu/    UI / menu / secondary scene scripts
-  Scenes/
-  Prefabs/
-  Animations/
-  Sounds/
-  Images/
+- 3D movement, gathering, resource drops, and interactable world objects
+- Settlement buildings, shops, upgrades, and affordability rules
+- 2D nighttime combat and enemy spawning
+- ScriptableObject-backed configuration and reusable interaction interfaces
+- Persistent statistics, resources, difficulty, and building transforms
+- Menus, settings, audio, and scene transitions
+
+## Running the Project
+
+Clone the repository and open the Unity project folder in the Unity version recorded by its project settings. The source is provided as a portfolio implementation and has no tagged release in this repository.
+
+## Screenshots
+
+The portfolio case study includes an existing screenshot of the 3D daytime phase. The playable build contains the 2D nighttime phase. No additional screenshot is claimed where a suitable repository asset was not verified.
+
+## Playable Build
+
+[Play Exile on Itch.io](https://speazyy.itch.io/exile)
+
+## Portfolio Case Study
+
+[View the Exile case study](https://tiagoffelix.com/projects/exile)
