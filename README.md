@@ -20,7 +20,7 @@ Prices needed to remain achievable across difficulty modes. Each mode also neede
 
 ## Difficulty and Pacing
 
-Difficulty modes alter the intended run pressure. The daytime economy and upgrade prices were designed so increasing difficulty would not make progression impossible.
+Difficulty modes increase combat pressure and reduce the margin for inefficient preparation. The daytime economy and upgrade prices were designed so increasing difficulty would not make progression impossible.
 
 ## Design Limitation
 
@@ -38,10 +38,6 @@ The primary scaling rule adds one enemy each night. This is a simple difficulty 
 ## Running the Project
 
 Clone the repository and open the Unity project folder in the Unity version recorded by its project settings. The source is provided as a portfolio implementation and has no tagged release in this repository.
-
-## Screenshots
-
-The portfolio case study includes an existing screenshot of the 3D daytime phase. The playable build contains the 2D nighttime phase. No additional screenshot is claimed where a suitable repository asset was not verified.
 
 ## Playable Build
 
