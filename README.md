@@ -45,4 +45,4 @@ Clone the repository and open the Unity project folder in the Unity version reco
 
 ## Portfolio Case Study
 
-[View the Exile case study](https://tiagoffelix.com/projects/exile)
+[View the Exile case study](https://tiagoffelix.com/projects/exile/)
