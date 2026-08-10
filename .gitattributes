@@ -4,3 +4,8 @@
 *.psd filter=lfs diff=lfs merge=lfs -text
 *.hdr filter=lfs diff=lfs merge=lfs -text
 *.exr filter=lfs diff=lfs merge=lfs -text
+
+"Assets/Assets/2D/TextMesh Pro/**" linguist-vendored
+"Assets/Assets/2D/Ground Prefabs/Pixel Art Top Down - Basic/Shader/**" linguist-vendored
+"Assets/Assets/2D/Hero Knight - Pixel Art/ColorSwap/**" linguist-vendored
+"Assets/Assets/3D/Polytope Studio/Lowpoly_Characters/Sources/Modular_NPC/Shaders/**" linguist-vendored
