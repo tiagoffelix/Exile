@@ -2,7 +2,7 @@
 
 Exile is a solo Unity project combining 3D daytime resource gathering and settlement progression with 2D nighttime combat.
 
-## Solo Project
+## Role
 
 Role: Solo Programmer and Designer
 
@@ -37,12 +37,9 @@ The primary scaling rule adds one enemy each night. This is a simple difficulty 
 
 ## Running the Project
 
-Clone the repository and open the Unity project folder in the Unity version recorded by its project settings. The source is provided as a portfolio implementation and has no tagged release in this repository.
+Clone the repository and open the Unity project folder in the Unity version recorded by its project settings. The repository has no tagged release.
 
-## Playable Build
+## Links
 
-[Play Exile on Itch.io](https://speazyy.itch.io/exile)
-
-## Portfolio Case Study
-
-[View the Exile case study](https://tiagoffelix.com/projects/exile/)
+- [Play on itch.io](https://speazyy.itch.io/exile)
+- [Case Study](https://tiagoffelix.com/projects/exile/)
