@@ -1,6 +1,6 @@
 # Exile
 
-Exile is a solo Unity project combining 3D daytime resource gathering and settlement progression with 2D nighttime combat.
+Exile is a solo Unity/C# project with a persistent progression loop connecting 3D daytime preparation to 2D nighttime combat. Resources, upgrades, difficulty, and purchased buildings carry between the two phases.
 
 ## Role
 
@@ -14,25 +14,40 @@ Day: gather wood, rock, and metal, then spend resources on buildings and upgrade
 
 Night: use that preparation in a 2D combat phase. Surviving advances the persistent run and returns the player to the next preparation phase.
 
-## Economy and Progression
+## Building and Upgrade Systems
 
-Prices needed to remain achievable across difficulty modes. Each mode also needed a reasonable number of days and nights, so daytime gathering could support preparation without removing pressure from the combat phase. Player statistics, resources, difficulty, and building state persist across scenes and sessions.
+Building costs are configured through `BuildingPositions` data. The shop checks affordability before offering purchases, while placeable buildings use a blueprint/ghost flow with collision and bounds validation, rotation, placement feedback, and stored transforms. Sword and armour upgrades use difficulty-dependent values.
+
+## Shared State and Persistence
+
+ScriptableObjects centralise selected shared state and configuration across scenes:
+
+- `PlayerStats`: player statistics, resources, difficulty, and progression flags
+- `TimeOfDayScript`: day/night timing state
+- `BuildingPositions`: purchase state, building transforms, and building costs
+- `NumberOfMaterials`: remaining tree and rock counts
+- `Narrator`: first-day and first-night flags
+
+`GameManager` saves and loads explicit values through PlayerPrefs. When the daytime scene loads, `AmbienceSpawner` uses that state to reconstruct purchased buildings and respawn the saved number of remaining resource nodes. Exact resource-node positions are not persisted; the remaining nodes are placed again within the configured spawn areas.
+
+These ScriptableObjects centralise part of the game's state and configuration, but they are not a complete data-driven framework: several gameplay values remain in scene components or code, and some assets mix configuration with mutable runtime state.
+
+## Interaction System
+
+The player casts a ray and invokes `IInteractable.Interact()` on supported targets. The shared contract is used by the mine, the sword and armour upgrade shops, and the day-ending bed. Resource harvesting and blueprint placement are separate specialised systems rather than universal `IInteractable` implementations.
 
 ## Difficulty and Pacing
 
-Difficulty modes increase combat pressure and reduce the margin for inefficient preparation. The daytime economy and upgrade prices were designed so increasing difficulty would not make progression impossible.
-
-## Design Limitation
-
-The primary scaling rule adds one enemy each night. This is a simple difficulty model. The rising count still increases pressure and encourages more efficient resource gathering during the day, but a richer curve could vary enemy composition and pressure more deliberately.
+Difficulty changes enemy statistics and the size of sword and armour upgrades. The primary night-to-night escalation rule adds exactly one enemy after each completed night. This increases pressure over time, but it is a simple count rule rather than adaptive difficulty or an encounter-composition system.
 
 ## Main Systems
 
-- 3D movement, gathering, resource drops, and interactable world objects
-- Settlement buildings, shops, upgrades, and affordability rules
+- 3D movement, gathering, and resource drops
+- Blueprint placement, settlement buildings, shops, upgrades, and affordability checks
 - 2D nighttime combat and enemy spawning
-- ScriptableObject-backed configuration and reusable interaction interfaces
-- Persistent statistics, resources, difficulty, and building transforms
+- Raycast-based interaction for the mine, upgrade shops, and day-ending bed
+- Shared ScriptableObject state plus PlayerPrefs persistence
+- Purchased-building reconstruction and remaining resource-count restoration
 - Menus, settings, audio, and scene transitions
 
 ## Running the Project
