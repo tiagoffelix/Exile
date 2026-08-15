@@ -30,15 +30,15 @@ ScriptableObjects centralise selected shared state and configuration across scen
 
 `GameManager` saves and loads explicit values through PlayerPrefs. When the daytime scene loads, `AmbienceSpawner` uses that state to reconstruct purchased buildings and respawn the saved number of remaining resource nodes. Exact resource-node positions are not persisted; the remaining nodes are placed again within the configured spawn areas.
 
-These ScriptableObjects centralise part of the game's state and configuration, but they are not a complete data-driven framework: several gameplay values remain in scene components or code, and some assets mix configuration with mutable runtime state.
+These ScriptableObjects hold the shared state needed across scenes. Other gameplay values still live in scene components or code, and some of the assets also carry mutable runtime state.
 
 ## Interaction System
 
-The player casts a ray and invokes `IInteractable.Interact()` on supported targets. The shared contract is used by the mine, the sword and armour upgrade shops, and the day-ending bed. Resource harvesting and blueprint placement are separate specialised systems rather than universal `IInteractable` implementations.
+The player casts a ray and invokes `IInteractable.Interact()` on supported targets. The shared contract covers the mine, the sword and armour upgrade shops, and the day-ending bed. Resource harvesting and blueprint placement use their own systems.
 
 ## Difficulty and Pacing
 
-Difficulty changes enemy statistics and the size of sword and armour upgrades. The primary night-to-night escalation rule adds exactly one enemy after each completed night. This increases pressure over time, but it is a simple count rule rather than adaptive difficulty or an encounter-composition system.
+Difficulty changes enemy statistics and the size of sword and armour upgrades. Each completed night adds one enemy; enemy composition itself does not change.
 
 ## Main Systems
 
