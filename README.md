@@ -28,7 +28,7 @@ ScriptableObjects centralise selected shared state and configuration across scen
 - `NumberOfMaterials`: remaining tree and rock counts
 - `Narrator`: first-day and first-night flags
 
-`GameManager` saves and loads explicit values through PlayerPrefs. When the daytime scene loads, `AmbienceSpawner` uses that state to reconstruct purchased buildings and respawn the saved number of remaining resource nodes. Exact resource-node positions are not persisted; the remaining nodes are placed again within the configured spawn areas.
+`GameManager` saves and loads explicit values through PlayerPrefs. When the daytime scene loads, `AmbienceSpawner` uses that state to reconstruct purchased buildings and respawn the saved number of remaining resource nodes. Exact resource-node positions are not persisted. The remaining nodes are placed again within the configured spawn areas.
 
 These ScriptableObjects hold the shared state needed across scenes. Other gameplay values still live in scene components or code, and some of the assets also carry mutable runtime state.
 
@@ -38,7 +38,7 @@ The player casts a ray and invokes `IInteractable.Interact()` on supported targe
 
 ## Difficulty and Pacing
 
-Difficulty changes enemy statistics and the size of sword and armour upgrades. Each completed night adds one enemy; enemy composition itself does not change.
+Difficulty changes enemy statistics and the size of sword and armour upgrades. Each completed night adds one enemy. Enemy composition itself does not change.
 
 ## Main Systems
 
