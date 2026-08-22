@@ -92,7 +92,7 @@ prefab carries a mobile-only variant.
 | Platform | Status | Verified |
 | --- | --- | --- |
 | Windows | Released on itch.io | Full loop played: menus, gathering, purchases, building, the transition to night, 2D combat, progression and saved state. |
-| Android | Not published yet | Builds as a signed ARM64 APK (IL2CPP, Unity 2021.3.20f1). The touch layer compiles and installs; it has not been run on a physical device. |
+| Android | Released on itch.io as a direct-install APK | Signed ARM64 APK (IL2CPP, Unity 2021.3.20f1) published as a download. The touch layer compiles and the APK installs; it has not been run on a physical device. |
 
 ## Running the Project
 
@@ -139,5 +139,5 @@ disclosed on the itch.io page. All gameplay code and systems are my own.
 
 ## Links
 
-- [Download on itch.io](https://speazyy.itch.io/exile)
+- [Download on itch.io](https://speazyy.itch.io/exile) — Windows build and a direct-install Android APK
 - [Case Study](https://tiagoffelix.com/projects/exile/)
