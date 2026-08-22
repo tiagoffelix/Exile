@@ -16,11 +16,11 @@ public class Mouse3rdPerson : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (GameInput.FreeLookHoldPressed)
         {
             canMove = false;
         }
-        else if (Input.GetMouseButtonUp(1))
+        else if (GameInput.FreeLookHoldReleased)
         {
             canMove = true;
         }
@@ -29,7 +29,7 @@ public class Mouse3rdPerson : MonoBehaviour
         {
             sensitivity = playerStats.Sensitivity;
 
-            float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
+            float mouseX = GameInput.LookX * sensitivity * Time.deltaTime;
 
             player.Rotate(Vector3.up * mouseX);
         }

@@ -45,8 +45,8 @@ public class PlayerMovement : MonoBehaviour
             healthIncreaseCooldown -= Time.deltaTime;
         }
 
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = GameInput.Horizontal;
+        float verticalInput = GameInput.Vertical;
 
         Vector3 movementDirection = transform.right * horizontalInput + transform.forward * verticalInput;
 
@@ -102,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetFloat("vInput", 0);
         }
-        if (Input.GetKeyDown(KeyCode.T))
+        if (GameInput.EmotePressed)
         {
             easterEggSound.Play(); // Play the easterEggSound when triggering the animation
             if (cameraSwitch.isFirstPersonActive())
@@ -131,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Time.time >= nextAttackTimer) 
         {
-            if (Input.GetMouseButtonDown(0))
+            if (GameInput.AttackPressed)
             {
                 Attack();
                 nextAttackTimer = Time.time + 1f;

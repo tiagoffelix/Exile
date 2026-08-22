@@ -19,11 +19,11 @@ public class MouseDirection : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (GameInput.FreeLookHoldPressed)
         {
             canMove = false;
         }
-        else if (Input.GetMouseButtonUp(1))
+        else if (GameInput.FreeLookHoldReleased)
         {
             canMove = true;
         }
@@ -32,8 +32,8 @@ public class MouseDirection : MonoBehaviour
         {
             sensitivity = playerStats.Sensitivity;
 
-            float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
-            float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
+            float mouseX = GameInput.LookX * sensitivity * Time.deltaTime;
+            float mouseY = GameInput.LookY * sensitivity * Time.deltaTime;
 
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -70f, 70f);

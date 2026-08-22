@@ -64,12 +64,12 @@ public class Player : MonoBehaviour
             isAttacking = false;
         }
 
-        if (Input.GetMouseButtonDown(0) && cooldownTimer == 0)
+        if (GameInput.AttackPressed && cooldownTimer == 0)
         {
             Attack();
         }
 
-        if (Input.GetMouseButton(1) && !isAttacking)
+        if (GameInput.BlockHeld && !isAttacking)
         {
             blockingTime += Time.deltaTime;
             animator.SetBool("Block", true);
@@ -95,8 +95,8 @@ public class Player : MonoBehaviour
 
     private void GetInput()
     {
-        inputHorizontal = Input.GetAxisRaw("Horizontal");
-        inputVertical = Input.GetAxisRaw("Vertical");
+        inputHorizontal = GameInput.HorizontalRaw;
+        inputVertical = GameInput.VerticalRaw;
     }
 
     private void MovePlayer()

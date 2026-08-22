@@ -74,7 +74,7 @@ public class PauseMenu2D : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && playerStats.EnemiesAlive > 0)
+        if (GameInput.PausePressed && playerStats.EnemiesAlive > 0)
         {
             TogglePauseMenu();
         }

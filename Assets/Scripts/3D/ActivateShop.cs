@@ -16,7 +16,7 @@ public class ActivateShop : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) && !playerStats.BossDead)
+        if (GameInput.ShopPressed && !playerStats.BossDead)
         {
             ToggleShop();
         }

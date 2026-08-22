@@ -18,7 +18,7 @@ public class Interactor : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (GameInput.InteractPressed)
         {
             Ray r = new Ray(interactorSource.position, interactorSource.forward);
             if (Physics.Raycast(r, out RaycastHit hitInfo, interactRange))

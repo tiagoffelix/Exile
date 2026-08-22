@@ -35,14 +35,14 @@ public class Blueprint : MonoBehaviour
 
     private void Update()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(GameInput.PointerPosition);
         float distanceToPlane;
 
         if (groundPlane.Raycast(ray, out distanceToPlane))
         {
             Vector3 hitPoint = ray.GetPoint(distanceToPlane);
 
-            if (!Input.GetMouseButton(1))
+            if (!GameInput.FreeLookHoldHeld)
             {
                 transform.position = hitPoint;
             }
@@ -54,7 +54,7 @@ public class Blueprint : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(0) && canPlace)
+        if (GameInput.PlacePressed && canPlace)
         {
             placeBuildingSound.Play();
 

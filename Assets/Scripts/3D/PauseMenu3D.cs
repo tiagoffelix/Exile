@@ -127,7 +127,7 @@ public class PauseMenu3D : MonoBehaviour
             controlsCanvas.SetActive(isPaused);
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && timeOfDay.TimeOfDay <= totalDuration)
+        if (GameInput.PausePressed && timeOfDay.TimeOfDay <= totalDuration)
         {
             TogglePauseMenu();
         }
